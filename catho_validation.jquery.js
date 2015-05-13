@@ -80,7 +80,7 @@
                 implementation.call(this, arguments.callee.name, pattern, elem);
             },
             numero : function numero(elem) {
-                pattern = /.+/ ;
+                pattern = /\d+/ ;
                 implementation.call(this, arguments.callee.name, pattern, elem);
             }
         };
