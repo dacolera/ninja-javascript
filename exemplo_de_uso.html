@@ -1,0 +1,28 @@
+<html>
+    <head>
+    <link rel="stylesheet" href="assert.css" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript" src="catho_validation.jquery.js"></script>                        
+    </head>
+
+    <body>   
+        <script type="text/javascript">
+            $(function(){
+                var catho = function () {
+                    this.testaAtributo = 200;
+                    this.testaFuncao = function() {
+                        console.log(this);
+                    };
+                };
+
+                Application.assert(catho.testaAtributo == 200, 'posso acessar um atributo publico de um objeto de primeira ordem ');
+                Application.assert(new catho().testaAtributo == 200, 'ao construi-lo acessar fica disponivel');
+                with(new catho){
+                    Application.assert(testaAtributo == 200 , 'opa agora esta no escopo global');
+                } 
+
+            }); 
+            
+        </script>
+    </body>
+</html>
