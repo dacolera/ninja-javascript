@@ -1,0 +1,19 @@
+.fail {
+        text-decoration: line-through;
+        color: gray;
+    }
+
+    .pass {
+        color: #090;
+        font-weight: bold;
+    }
+    #area-teste {
+        padding:10px;
+        width: 400px;
+        left: 50%;
+        height: auto;
+        background-color: #ddd;
+        top: 50px;
+        margin-left: -200px;
+        position : fixed;
+    }
