@@ -2,7 +2,8 @@
     <head>
     <link rel="stylesheet" href="JDJs.css" type="text/css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script type="text/javascript" src="JDJs.js"></script>                        
+        <script type="text/javascript" src="JDJs.js"></script>
+        <script type="text/javascript" src="dac_masc.js"></script>
     </head>
 
     <body>   
@@ -15,14 +16,26 @@
                     };
                 };
 
-                Application.assert(catho.testaAtributo == 200, 'posso acessar um atributo publico de um objeto de primeira ordem ');
-                Application.assert(new catho().testaAtributo == 200, 'ao construi-lo acessar fica disponivel');
-                with(new catho){
-                    Application.assert(testaAtributo == 200 , 'opa agora esta no escopo global');
-                } 
-
-            }); 
-            
+                Application.assert(
+                        catho.testaAtributo == 200,
+                        'nao posso acessar um atributo publico de um objeto de primeira ordem '
+                );
+                Application.assert(
+                        new catho().testaAtributo == 200,
+                        'ao construi-lo acessar fica disponivel'
+                );
+                with (new catho) {
+                    Application.assert(
+                            testaAtributo == 200 ,
+                            'opa agora esta no escopo global'
+                    );
+                }
+            });
         </script>
+
+        <form>
+            <input type="text" class="mascara" data-mascara="mascara_telefone" id="telefone" />
+            <input type="text" class="mascara" data-mascara="mascara_cpf" id="cpf" />
+        </form>
     </body>
 </html>
