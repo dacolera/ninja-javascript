@@ -158,4 +158,26 @@ $(function(){
                 .replace(/^(.{15})(\d*)$/, "$1-$2");
         }
     };
+
+    var mascara_cep = {
+        "digitos_ignorados": /\D/g,
+        "digitos_aceitos": /\d/,
+        "max_digitos": 8,
+        "formatador": function (valor) {
+            return valor
+                .replace(/^(\d{5})(\d*)$/, "$1-$2");
+        }
+    };
+
+    var mascara_birthday = {
+        "digitos_ignorados": /\D/g,
+        "digitos_aceitos": /\d/,
+        "max_digitos": 8,
+        "formatador": function (valor) {
+            return valor
+                .replace(/(\d{2})/, "$1/")
+                .replace(/(\d{2})\/(\d{2})/, "$1/$2")
+                .replace(/^(.{5})(\d*)$/, "$1/$2");
+        }
+    };
 });
