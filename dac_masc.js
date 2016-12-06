@@ -145,4 +145,17 @@ $(function(){
             return valor.replace(/(\d{3})/g, "$1.").replace(/^(.{11})\.(\d*)$/, "$1-$2");
         }
     };
+
+    var mascara_cnpj = {
+        "digitos_ignorados": /\D/g,
+        "digitos_aceitos": /\d/,
+        "max_digitos": 14,
+        "formatador": function (valor) {
+            return valor
+                .replace(/(\d{2})/, "$1.")
+                .replace(/(\d{2}\.)(\d{3})/, "$1$2.")
+                .replace(/^(.{10})(\d*)/, "$1/$2")
+                .replace(/^(.{15})(\d*)$/, "$1-$2");
+        }
+    };
 });
